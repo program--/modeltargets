@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/modeltargets)](https://CRAN.R-project.org/package=modeltargets)
+[![Codecov test coverage](https://codecov.io/gh/program--/modeltargets/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/modeltargets?branch=master)
+[![R-CMD-check](https://github.com/program--/modeltargets/workflows/R-CMD-check/badge.svg)](https://github.com/program--/modeltargets/actions)
 <!-- badges: end -->
 
 The goal of modeltargets is to ...
