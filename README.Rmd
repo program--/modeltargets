@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/program--/modeltargets/workflows/R-CMD-check/badge.svg)](https://github.com/program--/modeltargets/actions)
 <!-- badges: end -->
 
-The goal of modeltargets is to ...
+[`tidymodels`](https://tidymodels.org) facilitation via [`targets`](https://github.com/ropensci/targets).
 
 ## Installation
 
