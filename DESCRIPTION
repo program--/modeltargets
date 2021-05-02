@@ -1,0 +1,31 @@
+Package: modeltargets
+Title: Tidymodels pipelines with targets
+Version: 0.0.1.9000
+Authors@R: 
+    person(given = "Justin",
+           family = "Singh-Mohudpur",
+           role = c("aut", "cre"),
+           email = "justin@justinsingh.me",
+           comment = c(ORCID = "0000-0002-5233-5799"))
+Description: Machine learning processes can potentially incur long runtimes
+    and require lengthy codebases. The 'tidymodels' package mitigates many of
+    these issues, but codebases can still quickly get out of hand, and runtime
+    issues are prevelant regardless of the package used. This package facilitates
+    the 'tidymodels' process by leveraging the 'targets' package for orchestration
+    with wrapped 'tidymodels' functions that can be passed directly into a 'targets'
+    pipeline.
+URL: https://github.com/program--/modeltargets
+BugReports: https://github.com/program--/modeltargets/issues
+License: MIT + file LICENSE
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports:
+    rlang,
+    targets,
+    recipes
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+RdMacros: lifecycle
