@@ -1,0 +1,15 @@
+home:
+  title: Modeling Targets
+  description: Targets interface to tidymodels
+
+template:
+  params:
+    bootswatch: flatly
+
+reference:
+  - title: Tidymodels Targets
+  - contents:
+      - starts_with("tar_")
+  - title: Utilities
+    contents:
+      - .pipe_between

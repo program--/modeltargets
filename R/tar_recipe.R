@@ -1,11 +1,41 @@
+#' @title Recipe Target
+#' @aliases tar_recipe tar_recipe.default tar_recipe.formula
+#' @param name Name of target
+#' @param ... Additional functions that the recipe is passed to,
+#'            i.e. recipe step functions.
+#' @param tar_args Arguments passed to `tar_target`.
+#' @inheritParams recipes::recipe
+#' @return A `tar_target` object.
+#' @examples
+#' \dontrun{
+#'     # Basic recipe
+#'     tar_recipe(
+#'         make_recipe,
+#'         x = mtcars,
+#'         formula = mpg ~ .,
+#'         step_dummy(gear, carb),
+#'         tar_args = list(format = "qs")
+#'     )
+#' }
 #' @export
-tar_recipe <- function(x, ...) {
+tar_recipe <- function(name, x, ...) {
     UseMethod("tar_recipe", x)
 }
 
+#' @rdname tar_recipe
 #' @export
-tar_recipe.data.frame <- function(x, formula = NULL, ..., tar_args = NULL) {
-    name <- paste0("make_recipe_", deparse(substitute(x)))
+tar_recipe.default <- function(name, x, ...) {
+    rlang::abort("`x` should be a data frame, matrix, or tibble")
+}
+
+#' @rdname tar_recipe
+#' @export
+tar_recipe.data.frame <- function(name, x, formula = NULL,
+                                  ..., tar_args = list()) {
+    name <- .check_name(
+        rlang::enexpr(name),
+        "tidymodels_recipe"
+    )
 
     rec <- substitute(
         recipes::recipe(x = x, formula = fm),
@@ -25,9 +55,13 @@ tar_recipe.data.frame <- function(x, formula = NULL, ..., tar_args = NULL) {
     )
 }
 
+#' @rdname tar_recipe
 #' @export
-tar_recipe.formula <- function(formula, data, ..., tar_args = NULL) {
-    name <- paste0("make_recipe_", deparse(substitute(x)))
+tar_recipe.formula <- function(name, formula, data, ..., tar_args = list()) {
+    name <- .check_name(
+        rlang::enexpr(name),
+        "tidymodels_recipe"
+    )
 
     rec <- substitute(
         recipes::recipe(formula = fm, data = data),
@@ -47,9 +81,13 @@ tar_recipe.formula <- function(formula, data, ..., tar_args = NULL) {
     )
 }
 
+#' @rdname tar_recipe
 #' @export
-tar_recipe.matrix <- function(x, ..., tar_args = NULL) {
-    name <- paste0("make_recipe_", deparse(substitute(x)))
+tar_recipe.matrix <- function(name, x, ..., tar_args = list()) {
+    name <- .check_name(
+        rlang::enexpr(name),
+        "tidymodels_recipe"
+    )
 
     rec <- rlang::expr(recipes::recipe(x = x))
 

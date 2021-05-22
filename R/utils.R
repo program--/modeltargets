@@ -38,3 +38,11 @@
 
     x
 }
+
+.check_name <- function(name, alt_name) {
+    if (name == "") {
+        alt_name
+    } else {
+        rlang::expr_deparse(name)
+    }
+}
