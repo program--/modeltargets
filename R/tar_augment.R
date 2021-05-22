@@ -1,4 +1,4 @@
-#' @title Predict Target
+#' @title Augment Target
 #' @param name Name of target
 #' @param tar_args Arguments passed to `tar_target`.
 #' @inheritParams parsnip::augment.model_fit

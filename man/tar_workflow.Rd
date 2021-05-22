@@ -2,7 +2,7 @@
 % Please edit documentation in R/tar_workflow.R
 \name{tar_workflow}
 \alias{tar_workflow}
-\title{Recipe Target}
+\title{Workflow Target}
 \usage{
 tar_workflow(name, ..., tar_args = list())
 }
@@ -18,7 +18,7 @@ such as \code{workflows::add_model()}. See example.}
 A \code{tar_target} object.
 }
 \description{
-Recipe Target
+Workflow Target
 }
 \examples{
 \dontrun{

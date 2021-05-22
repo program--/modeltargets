@@ -1,4 +1,4 @@
-#' @title Recipe Target
+#' @title Workflow Target
 #' @param name Name of target
 #' @param ... Functions piped to from `workflows::workflow()`
 #'            such as `workflows::add_model()`. See example.

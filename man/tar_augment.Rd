@@ -2,7 +2,7 @@
 % Please edit documentation in R/tar_augment.R
 \name{tar_augment}
 \alias{tar_augment}
-\title{Predict Target}
+\title{Augment Target}
 \usage{
 tar_augment(name, x, new_data, ..., tar_args = list())
 }
@@ -18,5 +18,5 @@ tar_augment(name, x, new_data, ..., tar_args = list())
 \item{tar_args}{Arguments passed to \code{tar_target}.}
 }
 \description{
-Predict Target
+Augment Target
 }
